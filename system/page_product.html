@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!--CSS -->
+	<link type="text/css" href="css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.css" type="text/css">
+	<link rel="stylesheet" href="css/page_style.css" type="text/css">
+	<link rel="stylesheet" href="css/page_productRegistration.css" type="text/css">
+	<!--JavaScript -->
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="script/jquery.blockUI.js"></script>
+	<script src="script/productRegistrationValidation.js"></script>
+	<script src="script/bootstrap.min.js"></script>
+	<script type="text/javascript" src="script/page_productRegistration.js"> </script>
+	<script type="text/javascript" src="script/bootstrap-filestyle.min.js"> </script>
+
+
+</head>
+<body>
+
+	<div class="successAlert alert alert-success alert-dismissible" role="alert" id="addSuccess">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>登録完了</strong>商品を登録しました
+	</div>
+
+	<div class="failAlert alert alert-danger alert-dismissible" role="alert" id="addFailed">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>登録できませんでした</strong>通信に問題がありました。再度登録していただけますでしょうか。
+	</div>
+
+	<div class="failAlert alert alert-danger alert-dismissible" role="alert" id="deleteFailed">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>削除できませんでした</strong>通信に問題がありました。再度削除していただけますでしょうか。
+	</div>
+
+	<div class="successAlert alert alert-success alert-dismissible" role="alert" id="deleteSuccess">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>削除完了</strong>商品を削除しました。
+	</div>
+
+
+	<div id="wholeContents">
+		<br>
+		<table class="table" id="productRegistrationTable">
+			<tr>
+				<td>
+					<div ><a id="addProduct" href=""><u><i class="fa fa-plus-circle"></i>新規</u></a></div><br>
+				</td>
+			</tr>
+			<tr>
+				<td>商品名</td>
+				<td>
+				    <input class="responsive" id="productName" placeholder="商品名" > <div class="emptyInput" id="productNameError"></div>
+				</td>
+			<tr>
+
+			<tr>
+				<td>画像</td>
+				<td valign="middle">
+				    <div id="chooseImage">
+						<div>
+				    		<input type="file" id="image" class="filestyle html-btn" data-badge="false" data-input="false" data-icon="false" data-buttonText="画像を選択してください" onchange="readURL(this); " required='true'>
+								<div class="emptyInput" id="imageError"></div>
+				    	</div>
+				    </div>
+
+					<div id="img">
+						<div>
+							<input id="editImg" type="file" class="filestyle" data-badge="false" data-input="false"  data-icon="false" data-buttonText="Change Image" onchange="readURL(this);" required="true">
+							<div class="emptyInput" id="editImageError"></div>
+						</div>
+					</div>
+				</td>
+			<tr>
+			<tr>
+				<td valign="top">テキスト</td>
+				<td>
+				    <textarea rows="4" cols="50" class="responsive text-area" id="detail" placeholder="テキスト" required="true"></textarea>
+						<div class="emptyInput" id="detailError"></div>
+				</td>
+			<tr>
+			<tr>
+				<td valign="top">Pepperテキスト</td>
+				<td>
+
+				    <!-- <textarea rows="4" cols="50" class="responsive text-area" id="pepperText" placeholder="Pepperテキスト" required="true" style="border: 10px solid pink;"></textarea> -->
+						<textarea class="responsive" id="pepperText" placeholder="Pepperテキスト" required="true"></textarea>
+						<div class="emptyInput" id="pepperTextError"></div>
+				</td>
+			<tr>
+			<tr>
+				<td></td>
+				<td>
+					<div><button id="btn_register" class="register-button html-btn" onclick="register();">登録</button></div>
+					<div><button id="btn_edit" class="register-button" onclick="edit();">編集</button></div>
+				</td>
+			<tr>
+
+		</table>
+
+		<table class="table" id="productListTable" style="table-layout:fixed;">
+			<tr>
+				<td>登録済み商品</td>
+			</tr>
+			<tr>
+				<td>
+					<div id="lists">
+						<div id="productList"></div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+	</div>
+
+
+</body>
+</html>

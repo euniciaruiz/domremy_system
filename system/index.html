@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- <link href="css/jquery-ui.min.css" rel="stylesheet"> -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/page_style.css" rel="stylesheet">
+		<script src="script/jquery-1.11.3.min.js"></script>
+		<script src="script/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#main").tabs();
+			});// end of $(document).ready(function() {
+
+			function refresh(idString){
+				var iframe = document.getElementById(idString);
+
+				if(idString == "t"){
+					iframe.src = "top_page.html";
+				}
+				else if(idString == "c"){
+					iframe.src = "content_page.html";
+				}
+				// iframe.src = iframe.src;
+			}
+		</script>
+
+	</head>
+	<body>
+		<div id="headerDiv">
+			<div class="header">
+				<div id="donremi-logo">
+					<img src="css/images/logo.gif"/>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="main">
+				<ul class="nav navbar-nav">
+					<li id='_p'><a href="#product">商品登録</a></li>
+					<li id='_t' onclick="refresh('t');"><a href="#top">トップページ</a></li>
+					<li id='_c' onclick="refresh('c');"><a href="#content">コンテンツページ</a></li>
+					<li id='_d'><a href="#dance">ダンス</a></li>
+				</ul>
+
+			<div id="prodRegistrationContents">
+				<div id="product" class="views">
+					<iframe id="p" frameBorder="0" src="page_product.html"></iframe>
+				</div>
+
+				<div id="top" class="views">
+					<iframe id="t" frameBorder="0" src=""></iframe>
+				</div>
+
+				<div id="content" class="views">
+					<iframe id="c" frameBorder="0" src=""></iframe>
+				</div>
+
+				<div id="dance" class="views">
+					<iframe frameBorder="0" src="php/slideshow.php"></iframe>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

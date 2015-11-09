@@ -1,0 +1,90 @@
+
+#btn_register{
+	float: right;
+	display:block;
+	width: auto;
+}
+
+#productList{
+	width:100%;
+	height:100%;
+	overflow: auto;
+}
+
+#productList > div:hover {
+	background-color: #f7ebe1;
+}
+
+#btn_edit{
+	display:none;
+	float: right;
+}
+.button_ListEdit, .button_ListDelete{
+	background-color: inherit;
+	color: #D87F5E;
+	width: auto;
+	text-align: center;
+	padding: 0px;
+	border-style: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 30px;
+}
+
+#lists{
+	height:550px;
+	background-color: white;
+
+	min-width: 490px;
+}
+.list{
+	height: 60px;
+	border:1px solid #FFB295;
+	background-color: #fff;
+	padding:0px;
+	line-height: 50px;
+}
+.list img{
+	width:50px;
+	height: 50px;
+	margin-left: 20px;
+	float: left;
+}
+.list #name{
+	margin-left: 40px;
+	margin-top: 5px;
+	width:50%;
+	height: 50%;
+	float: left;
+	text-align:left;
+	font-size: 12px;
+
+}
+
+
+#img button{
+		margin-top: 50px;
+}
+
+
+#addProduct{
+	font-size: 15px;
+	text-decoration: none;
+}
+
+#addProduct:hover{
+	font-size: 17px;
+
+}
+#addProduct:visited{
+	color:black;
+}
+#addProduct:link{
+	color:black;
+}
+
+#productRegistrationTable, #productListTable{
+	margin-left: auto;
+	background-color: #fff;
+	min-width: 490px;
+}

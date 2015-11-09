@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/page_style.css"/>
+    <link rel="stylesheet" type="disabled" href="font-awesome-4.4.0/css/font-awesome.css"/>
+    <script type="text/javascript" src="script/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="script/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="script/page_functions.js"></script>
+  </head>
+
+
+  <body>
+    <div class="successAlert alert alert-success alert-dismissible" role="alert" id="savePageSuccess">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>登録完了</strong>商品を登録しました
+    </div>
+
+    <div class="failAlert alert alert-danger alert-dismissible" role="alert" id="savePageFailed">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>登録できませんでした</strong>通信に問題がありました。再度登録していただけますでしょうか。
+    </div>
+
+    <div class="failAlert alert alert-danger alert-dismissible" role="alert" id="errorGetPage">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>削除できませんでした</strong>通信に問題がありました。再度削除していただけますでしょうか。
+    </div>
+
+    <div class="failAlert alert alert-danger alert-dismissible" role="alert" id="errorGetList">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>削除完了</strong>商品を削除しました。
+    </div>
+
+    <div id="wholeContents">
+      <br>
+      <table class="table">
+        <tr>
+          <td style="width: 25%;">
+            ボタンタイトル
+          </td>
+          <td>
+            <input id="button-title" class="responsive" type="text"></input>
+            <div class="emptyInput" id="buttonTitleError"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Pepperテキスト
+          </td>
+          <td>
+            <textarea id="pepper-text" class="responsive"></textarea>
+            <div class="emptyInput" id="pagePepperTextError"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            表示方法
+          </td>
+          <td>
+            <input id="page-type" type="hidden" value="list">
+            <div id="list" class="page-type page-type-active button">リスト表示</div>
+            <div id="topic" class="page-type page-type-active button">トピックス表示</div>
+          </td>
+        </tr>
+        <tr id="title" class="hide">
+          <td>
+            タイトル
+          </td>
+          <td>
+            <input id="page-title" class="responsive" type="text"></input>
+            <div class="emptyInput" id="pageTitleError"></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">
+            表示する商品
+          </td>
+          <td id="products">
+            <div id="products-list"></div>
+            <div id="products-topic"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <div id="add-product" class="add-button button html-btn">
+              +
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <div onclick="submitPage();" class="register-button button html-btn">登録</div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <table id="page-list" style="margin: 0 auto; width: 80%; height: 100px;" class="table">
+              <!-- Pages will be appended here -->
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </body>
+</html>
